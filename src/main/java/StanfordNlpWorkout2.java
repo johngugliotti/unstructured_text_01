@@ -1,7 +1,8 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
+//import java.io.ByteArrayOutputStream;
+import org.apache.commons.io.output.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -122,7 +123,8 @@ class StanfordNlpWorkout2 {
             
             PDFTextStripper stripper = new PDFTextStripper();
             //define output stream class
-            OutputStream output = new OutputStream()
+            OutputStream output = new ByteArrayOutputStream(); 
+            OutputStream ostest = new OutputStream()
             {
                 private StringBuilder string = new StringBuilder();
                 @Override
